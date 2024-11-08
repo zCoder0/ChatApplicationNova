@@ -104,10 +104,3 @@ try:
 
 except (Exception):
     st.code(f"""print(Error :  + {str(e)})""")
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8501))
-    st._is_running_with_streamlit = True
-    st._main_run_closure__ = None
-    st.run(port=port, host="0.0.0.0")
