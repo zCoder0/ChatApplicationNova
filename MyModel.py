@@ -12,12 +12,14 @@ STOPWORDS = set(stopwords.words('english'))
 from IntentModel import IntentModel 
 
 class MyModel:
-    nlp= spacy.load('en_core_web_sm')
 
     def __init__(self):
         
         with open('Models/classification_model.pkl', 'rb') as file:
             self.model = pickle.load(file)
+
+        with open('Models/nlp_model.pkl', 'rb') as file:
+            self.nlp = pickle.load(file)
 
     def loadVector(self):
         with open('Models/tfidf_vectorizer.pkl', 'rb') as file:
